@@ -16,7 +16,7 @@ require 'dbconfig/config.php';
 <div id="main-wrapper">
     <center>
     <h2 style="font-family:Helvetica, Arial, sans-serif; color:#34495e; font-size:20px;"><u>LOGIN PAGE</u> </h2>
-    <img src="imgs\newone.jpg" class="avatar" style="height:100px; width:280px;"/>
+    <img src="imgs\newone.jpg" class="avatar" style="height:100px; width:275px;"/>
 </center>
 
 <form class="myform" action="newindex.php" method="post">
