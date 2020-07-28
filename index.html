@@ -65,6 +65,8 @@
 
 					
 				</form>
+				<div id="user_div"><a href="newhome.php"></a>
+				</div>
 				
 			</div>
 		</div>
@@ -98,8 +100,10 @@
 <script>
 firebase.auth().onAuthStateChanged(function(user){
 if(user){
+	document.getElementById("user_div").style.display = "block";
 document.getElementById("login_div").style.display = "none";
 }else{
+	document.getElementById("user_div").style.display = "none";
 document.getElementById("login_div").style.display = "initial";
 }
 });
