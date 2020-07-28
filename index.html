@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>BIBLE STUDY</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fontslogin/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fontslogin/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="csslogin/util.css">
+	<link rel="stylesheet" type="text/css" href="csslogin/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div id="login_div" class="limiter" >
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="" method="post">
+					<span class="login100-form-title p-b-26">
+						<img src="imgs\newlogo.png" class="logo" alt="Your logo" title="Your logo" width="300px;" height="100px;"/>
+					</span>
+					
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="email" id="email_field" required/>
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="password" id="password_field" required/>
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button onclick="login()" name="" type="submit" class="login100-form-btn" onclick="login()">
+								Login
+								</button>
+							
+						</div>
+					</div>
+
+					
+				</form>
+				
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBjLEw4qAUX9VECoXZdKx_6Ikh2cqtp03M",
+    authDomain: "login-adb9d.firebaseapp.com",
+    databaseURL: "https://login-adb9d.firebaseio.com",
+    projectId: "login-adb9d",
+    storageBucket: "login-adb9d.appspot.com",
+    messagingSenderId: "698408723538",
+    appId: "1:698408723538:web:2f6bcd6fbae3cd37746b8b",
+    measurementId: "G-5DE00GYKLW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script>
+firebase.auth().onAuthStateChanged(function(user){
+if(user){
+document.getElementById("login_div").style.display = "none";
+}else{
+document.getElementById("login_div").style.display = "initial";
+}
+});
+
+function login(){
+var userEmail = document.getElementById("email_field").value;
+var userPass = document.getElementById("password_field").value;
+
+firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error){
+
+var errorCode = error.code;
+var errorMessage = error.message;
+window.alert("error : " + errorMessage);
+});
+}
+</script>
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="jslogin/main.js"></script>
+
+</body>
+</html>
